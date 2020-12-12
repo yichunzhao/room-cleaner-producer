@@ -40,6 +40,29 @@ Rules are defined by the Exchnage type
 * Topic Exchange: according to routing pattern, wildcard matching, fx: NA.sales.#
 
   
+### AMQP Spring Support
+
+Spring uses RabiitMQ to communicate through the AMQP protocol. Its config is externally controlled by properties in spring.rabbitmq.* in application.properties. 
+
+````
+spring.rabbitmq.host=localhost
+spring.rabbitmq.port=5672
+spring.rabbitmq.username=admin
+spring.rabbitmq.password=secret
+````
+Alternatively, using address attribute
+````
+spring.rabbitmq.addresses=amqp://admin:secret@localhost
+
+````
+
+#### Sending a Message
+
+`AmpqTemplate` and `AmqpAdmin` are auto-configured, can be directly autowired.
+
+
+
+
 
 
 
